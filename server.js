@@ -1,6 +1,7 @@
 const express = require("express");
 
 const recipesRouter = require("./recipes/recipes-router.js");
+const ingredientsRouter = require("./ingredients/ingredients-router.js");
 
 const server = express();
 
@@ -8,8 +9,7 @@ server.use(express.json());
 server.use(logger);
 
 server.use("/api/recipes", recipesRouter);
-
-// - `GET /api/ingredients/:id/recipes`: all recipes in the system that utilize a single ingredient
+server.use("/api/ingredients", ingredientsRouter);
 
 server.use(errHandler);
 
