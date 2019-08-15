@@ -23,7 +23,7 @@ exports.up = function(knex) {
         .unique()
         .notNullable();
       tbl
-        .integer("measurement_types_id")
+        .integer("measurement_type_id")
         .unsigned()
         .notNullable()
         .references("id")
